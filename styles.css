@@ -1,0 +1,72 @@
+/* --- PAGE D'ACCUEIL --- */
+/* Cache le fil d'actualité principal (recommandations) */
+html.minimalist-mode ytd-browse[page-subtype="home"] #primary {
+    display: none !important;
+}
+
+/* Cache les "Shorts" (Accueil, Résultats de recherche, etc.) */
+html.minimalist-mode ytd-rich-section-renderer, 
+html.minimalist-mode ytd-reel-shelf-renderer,
+html.minimalist-mode a[href^="/shorts"] { /* Sécurité supplémentaire pour les liens Shorts */
+    display: none !important;
+}
+
+/* --- PAGE VIDÉO --- */
+/* Cache la colonne de droite (vidéos recommandées / suivantes) */
+html.minimalist-mode #secondary {
+    display: none !important;
+}
+
+/* Cache les commentaires */
+html.minimalist-mode #comments {
+    display: none !important;
+}
+
+/* Cache le "Mur de fin" (vidéos suggérées à la fin de la lecture) */
+html.minimalist-mode .ytp-endscreen-content {
+    display: none !important;
+}
+
+/* --- BARRE LATÉRALE GAUCHE (Navigation) --- */
+/* Cache les suggestions "Explorer", "Plus de YouTube", etc.
+   Note : nth-of-type peut varier selon les mises à jour de YouTube. 
+   On cible les sections qui ne sont pas la navigation principale.
+*/
+html.minimalist-mode ytd-guide-section-renderer:nth-of-type(n+3) {
+    display: none !important;
+}
+
+/* --- ESTHÉTIQUE --- */
+/* Centre la vidéo en mode cinéma ou normal puisque la barre latérale droite est partie */
+html.minimalist-mode ytd-watch-flexy[flexy] #primary.ytd-watch-flexy {
+    margin: 0 auto !important;
+    min-width: 0 !important; /* Évite des bugs de largeur sur certains écrans */
+    flex: 1 !important; /* Force l'occupation de l'espace */
+    padding-right: 0 !important;
+    justify-content: center;
+}
+
+/* Centre le player vidéo lui-même */
+html.minimalist-mode #player-container-outer {
+    margin: 0 auto !important;
+}
+
+/* Centre le contenu de la page d'accueil vide */
+html.minimalist-mode ytd-browse[page-subtype="home"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: transparent !important;
+}
+
+/* Message confirmant le bon fonctionnement de l'extension */
+html.minimalist-mode ytd-browse[page-subtype="home"]::before {
+    content: "Mode Focus Activé 🧘";
+    font-size: 1.5rem;
+    color: #606060;
+    font-family: "Roboto", sans-serif;
+    position: absolute;
+    top: 30%;
+    pointer-events: none; /* Permet de cliquer à travers si besoin */
+}
