@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Minimalist YTube - Focus Mode",
+  "name": "Minimalist Tube - Focus Mode",
   "version": "1.1",
   "description": "Supprime les recommandations et distractions pour une expérience YouTube productive.",
   "permissions": ["activeTab", "scripting", "storage"],
