@@ -1,6 +1,6 @@
-🧘 Minimalist YTube - Focus Mode
+🧘 Minimalist Tube - Focus Mode
 
-Minimalist YTube est une extension Chrome conçue pour transformer votre expérience YouTube en un outil de travail pur, en éliminant toutes les distractions algorithmiques.
+Minimalist Tube est une extension Chrome conçue pour transformer votre expérience YouTube en un outil de travail pur, en éliminant toutes les distractions algorithmiques.
 
 ✨ Fonctionnalités
 
